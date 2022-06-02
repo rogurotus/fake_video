@@ -14,8 +14,8 @@ deps:
 create:
 	sudo modprobe v4l2loopback card_label="My Fake Webcam" exclusive_caps=1
 
-	pactl load-module module-null-sink sink_name=Virtual1 sink_properties=device.description="My Fake Micro"
-	pactl load-module module-loopback sink=Virtual1
+	sudo pactl load-module module-null-sink sink_name=Virtual1 sink_properties=device.description="My Fake Micro"
+	sudo pactl load-module module-loopback sink=Virtual1
 
 	sudo v4l2-ctl --list-devices
 	LANG=C pactl list | grep -A2 'Source #' | grep 'Name: ' | cut -d" " -f2
