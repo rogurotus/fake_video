@@ -2,7 +2,7 @@
 
 deps:
 	sudo apt update 
-	sudo apt install -y kmod
+	sudo apt install -y dkms
 	sudo apt install -y ffmpeg
 	sudo apt -y install v4l2loopback-dkms v4l2loopback-utils
 
