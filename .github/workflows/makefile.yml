@@ -21,8 +21,3 @@ jobs:
     - name: Run check
       continue-on-error: true
       run: make create
-
-    - name: Run check2
-      continue-on-error: true
-      run: make error
-
