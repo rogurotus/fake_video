@@ -7,6 +7,7 @@ deps:
 	sudo apt install -y ffmpeg
 	sudo apt -y install v4l2loopback-dkms v4l2loopback-utils
 	sudo apt install v4l-utils
+	sudo apt install pulseaudio
 	sudo apt install pulseaudio-utils
 
 create:
