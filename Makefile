@@ -9,6 +9,7 @@ deps:
 	sudo apt install v4l-utils
 	sudo apt install pulseaudio
 	sudo apt install pulseaudio-utils
+	sudo pulseaudio -D
 
 create:
 	sudo modprobe v4l2loopback card_label="My Fake Webcam" exclusive_caps=1
