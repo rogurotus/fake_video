@@ -9,9 +9,6 @@ deps:
 	sudo apt install v4l-utils
 
 create:
-	sudo v4l2-ctl --list-devices
-	LANG=C pactl list | grep -A2 'Source #' | grep 'Name: ' | cut -d" " -f2
-
 	sudo modprobe v4l2loopback card_label="My Fake Webcam" exclusive_caps=1
 	sudo modprobe snd_aloop card_label="My Fake Micro"
 
