@@ -1,7 +1,6 @@
 
 
 deps:
-	sudo export ODMDIR=/etc/objrepos
 	sudo apt update 
 	sudo apt install -y dkms
 	sudo apt install -y linux-modules-extra-$(shell uname -r)
