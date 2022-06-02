@@ -7,10 +7,11 @@ deps:
 	sudo apt install -y ffmpeg
 	sudo apt -y install v4l2loopback-dkms v4l2loopback-utils
 	sudo apt install v4l-utils
+	sudo apt install pulseaudio-utils
 
 create:
 	sudo modprobe v4l2loopback card_label="My Fake Webcam" exclusive_caps=1
-	
+
 	pactl load-module module-null-sink sink_name=Virtual1 sink_properties=device.description="My Fake Micro"
 	pactl load-module module-loopback sink=Virtual1
 
