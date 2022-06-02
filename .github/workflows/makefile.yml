@@ -20,5 +20,6 @@ jobs:
       
     - name: Run check
       run: make create
+    - name: Run check2
       run: make error
 
