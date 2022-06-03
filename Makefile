@@ -40,7 +40,10 @@ deps.b:
 
 build.b: 
 	git clone --depth 1 --branch "9.1.0" https://github.com/webcamoid/akvirtualcamera.git
-	cd ./akvirtualcamera && ./ports/ci/windows-vs/build.bat
+	mkdir build
+	cmake -G "Visual Studio 16 2019" -S ./akvirtualcamera -B ./build
+	cmake --build ./build
+	cd ./build && ls
 
 try.b:
 	curl https://github.com/webcamoid/akvirtualcamera/releases/download/9.1.0/akvirtualcamera-windows-9.1.0.exe
