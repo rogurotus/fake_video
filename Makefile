@@ -19,6 +19,7 @@ create:
 
 
 deps.windows:
-	curl https://github.com/webcamoid/akvirtualcamera/releases/download/9.1.0/akvirtualcamera-windows-9.1.0.exe
-	akvirtualcamera-windows-9.1.0.exe --install
-	AkVCamManager add-device "Virtual Camera"
+	git clone https://github.com/webcamoid/akvirtualcamera.git
+	mkdir build
+	cmake -G "MSYS Makefiles" -S ./akvirtualcamera -B ./build
+	make -C ./build
