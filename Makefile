@@ -21,5 +21,5 @@ create:
 deps.windows:
 	git clone https://github.com/webcamoid/akvirtualcamera.git
 	mkdir build
-	cmake -G "MSYS Makefiles" -S ./akvirtualcamera -B ./build
-	make -C ./build
+	cmake -G "Visual Studio 16 2019" -S ./akvirtualcamera -B ./build
+	cmake --build ./build
