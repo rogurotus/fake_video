@@ -70,4 +70,4 @@ jobs:
           mingw-w64-${{ matrix.target_arch }}-qt5
           mingw-w64-${{ matrix.target_arch }}-vlc
     - name: Release Build
-      run: ./ports/ci/windows-msys/build.sh
+      run: make build.b
