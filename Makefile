@@ -46,9 +46,11 @@ build.b:
 	./build/build/x64/Debug/AkVCamAssistant.exe --install
 
 gg.gg:
+	./build/build/x64/Debug/AkVCamManager.exe update
 	cd ./build/build/x64/Debug && sc start AkVCamAssistant
 	./build/build/x64/Debug/AkVCamManager.exe update
 gg.gg2:
+	./build/build/x64/Debug/AkVCamManager.exe update
 	./build/build/x64/Debug/AkVCamManager.exe devices
 	./build/build/x64/Debug/AkVCamManager.exe add-device "Virtual Camera"
 	./build/build/x64/Debug/AkVCamManager.exe update
