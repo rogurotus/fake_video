@@ -36,5 +36,4 @@ deps.b2:
 
 deps.b:
 	git clone --depth 1 --branch "9.1.0" https://github.com/webcamoid/akvirtualcamera.git
-	cd ./akvirtualcamera
 	cd ./akvirtualcamera && ./ports/ci/windows-vs/build.bat
