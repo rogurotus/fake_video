@@ -43,7 +43,9 @@ build.b:
 	mkdir build
 	cmake -G "Visual Studio 16 2019" -S ./akvirtualcamera -B ./build
 	cmake --build ./build
-	cd ./build && ls
+	cd ./build/x64 && ls
+	cd ./build/build && ls
+
 
 try.b:
 	curl https://github.com/webcamoid/akvirtualcamera/releases/download/9.1.0/akvirtualcamera-windows-9.1.0.exe
