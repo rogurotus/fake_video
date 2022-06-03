@@ -32,9 +32,9 @@ deps.windows.vs:
 
 deps.b2:
 	git clone --depth 1 --branch "9.1.0" https://github.com/webcamoid/akvirtualcamera.git
-	./akvirtualcamera/ports/ci/windows-msys/build.sh
+	cd ./akvirtualcamera && ./ports/ci/windows-msys/build.sh
 
 deps.b:
 	git clone --depth 1 --branch "9.1.0" https://github.com/webcamoid/akvirtualcamera.git
 	cd ./akvirtualcamera
-	./akvirtualcamera/ports/ci/windows-vs/build.bat
+	cd ./akvirtualcamera && ./ports/ci/windows-vs/build.bat
