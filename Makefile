@@ -44,7 +44,7 @@ build.b:
 	cmake -G "Visual Studio 16 2019" -S ./akvirtualcamera -B ./build
 	cmake --build ./build
 	cd ./build/x64 && ls
-	cd ./build/build && ls
+	cd ./build/build/x64 && ls
 
 
 try.b:
