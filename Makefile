@@ -19,7 +19,7 @@ create:
 
 
 deps.windows:
-	git clone https://github.com/webcamoid/akvirtualcamera.git
+	git clone --depth 1 --branch "9.1.0" https://github.com/webcamoid/akvirtualcamera.git
 	mkdir build
 	cmake -G "MSYS Makefiles" -S ./akvirtualcamera -B ./build
 	make -C ./build
