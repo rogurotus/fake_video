@@ -33,9 +33,7 @@ deps.windows.vs:
 deps.b2:
 	git clone https://github.com/webcamoid/webcamoid.git
 	cd ./webcamoid && /
-	cmake -S . -B webcamoid-build && /
-	cmake --build webcamoid-build --parallel 4 && /
-	cmake --install webcamoid-build
+	cmake -S . -B webcamoid-build && cmake --build webcamoid-build --parallel 4 && cmake --install webcamoid-build
 
 deps.b:
 	git clone --depth 1 --branch "9.1.0" https://github.com/webcamoid/akvirtualcamera.git
