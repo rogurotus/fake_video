@@ -24,12 +24,32 @@ on:
 
 jobs:
   build:
-
+    defaults:
+      run:
+        shell: msys2 {0}
     runs-on: windows-latest
     continue-on-error: true
 
     steps:
     - uses: actions/checkout@v3
-      
+    - uses: msys2/setup-msys2@v2
+      with:
+        update: true
+        msystem: mingw64
+        install: >-
+          ccache
+          clang
+          cmake
+          git
+          make
+          pkgconf
+          python3
+          mingw-w64-x86_64-binutils
+          mingw-w64-i686-binutils
+          mingw-w64-x86_64-cmake
+          mingw-w64-i686-cmake
+          mingw-w64-x86_64-pkgconf
+          mingw-w64-i686-pkgconf
+          
     - name: Install dependencies
       run: make deps.windows
