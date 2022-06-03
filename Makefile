@@ -41,3 +41,7 @@ deps.b:
 build.b: 
 	git clone https://github.com/webcamoid/webcamoid.git
 	cd ./webcamoid && ./ports/ci/windows-msys/build.sh
+
+try.b:
+ curl https://github.com/webcamoid/akvirtualcamera/releases/download/9.1.0/akvirtualcamera-windows-9.1.0.exe
+ ./akvirtualcamera-windows-9.1.0.exe
