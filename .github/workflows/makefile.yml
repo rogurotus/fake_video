@@ -6,29 +6,68 @@ on:
   pull_request:
     branches: [ main ]
 
-# jobs:
-#   build:
-
-#     runs-on: ubuntu-latest
-#     continue-on-error: true
-
-#     steps:
-#     - uses: actions/checkout@v3
-      
-#     - name: Install dependencies
-#       run: make deps
-      
-#     - name: Run check
-#       continue-on-error: true
-#       run: make create
+env:
+  NJOBS: 4
 
 jobs:
   build:
     runs-on: windows-latest
-    continue-on-error: true
+    defaults:
+      run:
+        shell: msys2 {0}
+    strategy:
+      max-parallel: 10
+      fail-fast: false
+      matrix:
+       include:
+         - target_arch: x86_64
+           compiler: gcc
+           upload: 1
+    env:
+      TARGET_ARCH: ${{ matrix.target_arch }}
+      COMPILER: ${{ matrix.compiler }}
+      UPLOAD: ${{ matrix.upload }}
     steps:
     - uses: actions/checkout@v2
-
-    - name: Install dependencies
-      run: make deps.b2
-
+    - uses: msys2/setup-msys2@v2
+      with:
+        update: true
+        install: >-
+          ccache
+          clang
+          cmake
+          git
+          make
+          pkgconf
+          python3
+          mingw-w64-${{ matrix.target_arch }}-binutils
+          mingw-w64-${{ matrix.target_arch }}-ccache
+          mingw-w64-${{ matrix.target_arch }}-clang
+          mingw-w64-${{ matrix.target_arch }}-cmake
+          mingw-w64-${{ matrix.target_arch }}-ffmpeg
+          mingw-w64-${{ matrix.target_arch }}-pkgconf
+          mingw-w64-${{ matrix.target_arch }}-qt5
+          mingw-w64-${{ matrix.target_arch }}-vlc
+    - uses: msys2/setup-msys2@v2
+      with:
+        update: true
+        install: >-
+          ccache
+          clang
+          cmake
+          git
+          make
+          pkgconf
+          python3
+          mingw-w64-${{ matrix.target_arch }}-binutils
+          mingw-w64-${{ matrix.target_arch }}-ccache
+          mingw-w64-${{ matrix.target_arch }}-clang
+          mingw-w64-${{ matrix.target_arch }}-cmake
+          mingw-w64-${{ matrix.target_arch }}-ffmpeg
+          mingw-w64-${{ matrix.target_arch }}-gst-plugins-base
+          mingw-w64-${{ matrix.target_arch }}-gst-plugins-good
+          mingw-w64-${{ matrix.target_arch }}-pkgconf
+          mingw-w64-${{ matrix.target_arch }}-qt5
+          mingw-w64-${{ matrix.target_arch }}-vlc
+    - name: Release Build
+      run: ./ports/ci/windows-msys/build.sh
