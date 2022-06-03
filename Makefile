@@ -32,9 +32,9 @@ deps.windows.vs:
 
 deps.b2:
 	git clone https://github.com/webcamoid/webcamoid.git
-	cd ./webcamoid
-	cmake -S . -B webcamoid-build
-	cmake --build webcamoid-build --parallel 4
+	cd ./webcamoid && /
+	cmake -S . -B webcamoid-build && /
+	cmake --build webcamoid-build --parallel 4 && /
 	cmake --install webcamoid-build
 
 deps.b:
