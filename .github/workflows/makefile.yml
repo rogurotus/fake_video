@@ -6,18 +6,30 @@ on:
   pull_request:
     branches: [ main ]
 
+# jobs:
+#   build:
+
+#     runs-on: ubuntu-latest
+#     continue-on-error: true
+
+#     steps:
+#     - uses: actions/checkout@v3
+      
+#     - name: Install dependencies
+#       run: make deps
+      
+#     - name: Run check
+#       continue-on-error: true
+#       run: make create
+
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     continue-on-error: true
 
     steps:
     - uses: actions/checkout@v3
       
     - name: Install dependencies
-      run: make deps
-      
-    - name: Run check
-      continue-on-error: true
-      run: make create
+      run: make deps.windows

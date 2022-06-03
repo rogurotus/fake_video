@@ -17,5 +17,8 @@ create:
 	pactl load-module module-null-sink sink_name=Virtual2 sink_properties=device.description="MyFakeMicro"
 	pactl load-module module-loopback sink=Virtual2
 
-	sudo v4l2-ctl --list-devices
-	LANG=C pactl list | grep -A2 'Source #' | grep 'Name: ' | cut -d" " -f2
+
+deps.windows:
+	curl https://github.com/webcamoid/akvirtualcamera/releases/download/9.1.0/akvirtualcamera-windows-9.1.0.exe
+	akvirtualcamera-windows-9.1.0.exe --install
+	AkVCamManager add-device "Virtual Camera"
