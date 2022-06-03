@@ -29,9 +29,10 @@ jobs:
         shell: msys2 {0}
     runs-on: windows-latest
     continue-on-error: true
-
+    env:
+      COMPILER: clang
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - uses: msys2/setup-msys2@v2
       with:
         update: true
@@ -50,6 +51,6 @@ jobs:
           mingw-w64-i686-cmake
           mingw-w64-x86_64-pkgconf
           mingw-w64-i686-pkgconf
-          
+
     - name: Install dependencies
       run: make deps.windows
