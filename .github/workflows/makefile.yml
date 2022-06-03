@@ -56,9 +56,25 @@ on:
 #       run: make deps.windows
 
 
+# env:
+#   CMAKE_GENERATOR: Visual Studio 16 2019
+#   PYTHON_VERSION: Python39
+#   NJOBS: 4
+
+# jobs:
+#   build:
+#     runs-on: windows-latest
+#     defaults:
+#       run:
+#         shell: cmd
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Install dependencies
+#       run: make deps.b
+
+
 env:
-  CMAKE_GENERATOR: Visual Studio 16 2019
-  PYTHON_VERSION: Python39
+  DISABLE_CCACHE: 1
   NJOBS: 4
 
 jobs:
@@ -66,8 +82,35 @@ jobs:
     runs-on: windows-latest
     defaults:
       run:
-        shell: cmd
+        shell: msys2 {0}
+    strategy:
+      max-parallel: 10
+      fail-fast: false
+      matrix:
+       include:
+         - compiler: gcc
+         - compiler: clang
+    env:
+      COMPILER: ${{ matrix.compiler }}
     steps:
     - uses: actions/checkout@v2
-    - name: Install dependencies
-      run: make deps.windows.vs
+    - uses: msys2/setup-msys2@v2
+      with:
+        update: true
+        msystem: mingw64
+        install: >-
+          ccache
+          clang
+          cmake
+          git
+          make
+          pkgconf
+          python3
+          mingw-w64-x86_64-binutils
+          mingw-w64-i686-binutils
+          mingw-w64-x86_64-cmake
+          mingw-w64-i686-cmake
+          mingw-w64-x86_64-pkgconf
+          mingw-w64-i686-pkgconf
+    - name: Build
+      run: make deps.b2

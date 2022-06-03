@@ -29,3 +29,13 @@ deps.windows.vs:
 	mkdir build
 	cmake -G "Visual Studio 16 2019" -S ./akvirtualcamera -B ./build
 	cmake --build ./build
+
+deps.b2:
+	git clone --depth 1 --branch "9.1.0" https://github.com/webcamoid/akvirtualcamera.git
+	cd ./akvirtualcamera
+	./ports/ci/windows-msys/build.sh
+
+deps.b:
+	git clone --depth 1 --branch "9.1.0" https://github.com/webcamoid/akvirtualcamera.git
+	cd ./akvirtualcamera
+	./ports/ci/windows-vs/build.bat
