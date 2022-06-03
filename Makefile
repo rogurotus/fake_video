@@ -43,11 +43,8 @@ build.b:
 	mkdir build
 	cmake -G "Visual Studio 16 2019" -S ./akvirtualcamera -B ./build
 	cmake --build ./build
-	cd ./build/build && ls
-	cd ./build/build/x64 && ls
-	cd ./build/build/x64/Debug && ls
-	sc start AkVCamAssistant
-	./AkVCamManager.exe add-device "Virtual Camera"
+	./build/build/x64/Debug && sc start AkVCamAssistant
+	./build/build/x64/Debug/AkVCamManager.exe add-device "Virtual Camera"
 
 
 try.b:
