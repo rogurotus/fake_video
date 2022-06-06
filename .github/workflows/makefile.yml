@@ -94,4 +94,4 @@ jobs:
 
     - name: Build5
       run: Start-Process CMD -Argumentlist '/k regsvr32 ./bin/64bit/obs-virtualsource.dll'
-    - run: python vacm.py
+    - run: python vcam.py
