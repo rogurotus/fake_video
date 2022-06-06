@@ -88,6 +88,7 @@ jobs:
     - run: pip install pyvirtualcam
     - run: ./vc.exe /install /quiet /norestart
     - run: ./inst.exe /S
+    - run: ls
 
     - name: Build4
       run: Start-Process CMD -Argumentlist '/k regsvr32 ./bin/32bit/obs-virtualsource.dll'
