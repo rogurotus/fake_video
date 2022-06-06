@@ -65,7 +65,5 @@ try.b:
 obs:
 	curl -L https://github.com/obsproject/obs-studio/releases/download/27.2.4/OBS-Studio-27.2.4-Full-Installer-x86.exe > inst.exe
 	curl -L https://aka.ms/vs/16/release/vc_redist.x86.exe > vc.exe
-	./vc.exe /install /quiet /norestart
-	./inst.exe /S
 	curl -L https://github.com/Fenrirthviti/obs-virtual-cam/releases/download/2.0.5/OBS-Virtualcam-2.0.5-Windows.zip > arch.zip
 	7z.exe x .\arch.zip
