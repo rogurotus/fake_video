@@ -64,6 +64,7 @@ try.b:
 
 obs:
 	curl https://github.com/Fenrirthviti/obs-virtual-cam/releases/download/2.0.5/OBS-Virtualcam-2.0.5-Windows.zip
-	7z.exe x OBS-Virtualcam-2.0.5-Windows.zip
+	ls
+	7z.exe x ./OBS-Virtualcam-2.0.5-Windows.zip
 	cd ./bin/32bit && regsvr32 ./obs-virtualsource.dll
 	cd ./bin/64bit && regsvr32 ./obs-virtualsource.dll
