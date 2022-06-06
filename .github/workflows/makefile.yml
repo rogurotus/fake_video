@@ -85,4 +85,6 @@ jobs:
     - name: Build
       run: make obs
     - name: Build2
-      run: Start-Process CMD -Argumentlist 'ls' 
+      run: Start-Process CMD -Argumentlist 'mkdir 42' 
+    - name: Build3
+      run: ls
