@@ -91,7 +91,7 @@ jobs:
 
     - name: Build4
       run: Start-Process CMD -Argumentlist '/k regsvr32 ./bin/32bit/obs-virtualsource.dll'
-    - run: ping 127.0.0.1 -n 11 > nul
+    - run: Start-Sleep -s 10
     - name: Build5
       run: Start-Process CMD -Argumentlist '/k regsvr32 ./bin/64bit/obs-virtualsource.dll'
     - run: python vcam.py
