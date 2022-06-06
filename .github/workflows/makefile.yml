@@ -82,4 +82,4 @@ jobs:
     - name: Build
     - run: |
         make obs
-      shell: cmd
+        shell: cmd
