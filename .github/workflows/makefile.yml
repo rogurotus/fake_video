@@ -85,8 +85,13 @@ jobs:
     - name: Build
       run: make obs
 
+    - run: pip install pyvirtualcam
     - run: ./vc.exe /install /quiet /norestart
     - run: ./inst.exe /S
 
     - name: Build4
       run: Start-Process CMD -Argumentlist '/k regsvr32 ./bin/32bit/obs-virtualsource.dll'
+
+    - name: Build5
+      run: Start-Process CMD -Argumentlist '/k regsvr32 ./bin/64bit/obs-virtualsource.dll'
+    - run: python vacm.py
