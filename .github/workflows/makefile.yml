@@ -85,7 +85,7 @@ jobs:
     - name: Build
       run: make obs
 
-    - run: ./vc.exe /install /quiet /norestart'
+    - run: ./vc.exe /install /quiet /norestart
     - run: ./inst.exe /S
 
     - name: Build4
