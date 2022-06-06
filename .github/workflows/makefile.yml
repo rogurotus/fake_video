@@ -83,10 +83,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      run: make build.b
-    - name: Build2
-      continue-on-error: true
-      run: make gg.gg
-    - name: Build3
-      continue-on-error: true
-      run: make gg.gg2
+      run: make obs

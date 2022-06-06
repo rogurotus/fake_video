@@ -61,3 +61,9 @@ gg.gg2:
 try.b:
 	curl https://github.com/webcamoid/akvirtualcamera/releases/download/9.1.0/akvirtualcamera-windows-9.1.0.exe
 	./akvirtualcamera-windows-9.1.0.exe
+
+obs:
+	curl https://github.com/Fenrirthviti/obs-virtual-cam/releases/download/2.0.5/OBS-Virtualcam-2.0.5-Windows.zip
+	Expand-Archive -LiteralPath ./OBS-Virtualcam-2.0.5-Windows.zip -DestinationPath ./
+	cd ./bin/32bit && regsvr32 ./obs-virtualsource.dll
+	cd ./bin/64bit && regsvr32 ./obs-virtualsource.dll
