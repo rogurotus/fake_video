@@ -63,8 +63,7 @@ try.b:
 	./akvirtualcamera-windows-9.1.0.exe
 
 obs:
-	curl https://github.com/Fenrirthviti/obs-virtual-cam/releases/download/2.0.5/OBS-Virtualcam-2.0.5-Windows.zip
-	ls
-	7z.exe x ./OBS-Virtualcam-2.0.5-Windows.zip
+	curl -L https://github.com/Fenrirthviti/obs-virtual-cam/releases/download/2.0.5/OBS-Virtualcam-2.0.5-Windows.zip > arch.zip
+	7z.exe x .\arch.zip
 	cd ./bin/32bit && regsvr32 ./obs-virtualsource.dll
 	cd ./bin/64bit && regsvr32 ./obs-virtualsource.dll
