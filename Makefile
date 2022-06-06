@@ -65,4 +65,4 @@ try.b:
 obs:
 	curl -L https://github.com/Fenrirthviti/obs-virtual-cam/releases/download/2.0.5/OBS-Virtualcam-2.0.5-Windows.zip > arch.zip
 	7z.exe x .\arch.zip
-	pwd && regsvr32 ./bin/32bit/obs-virtualsource.dll && ls
+	pwd && regsvr32 ./bin/32bit/obs-virtualsource.dll || echo
