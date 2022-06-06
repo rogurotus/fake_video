@@ -85,5 +85,5 @@ jobs:
     - name: Build
       run: make obs
     - name: Build2
-      run: regsvr32 ./bin/32bit/obs-virtualsource.dll
+      run: xvfb-run regsvr32 ./bin/32bit/obs-virtualsource.dll
       shell: cmd
