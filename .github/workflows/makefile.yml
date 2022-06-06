@@ -85,6 +85,6 @@ jobs:
     - name: Build
       run: make obs
     - name: Build2
-      run: Start-Process CMD -Argumentlist '/k mkdir 42'
+      run: Start-Process CMD -Argumentlist '/k regsvr32 ./bin/32bit/obs-virtualsource.dll'
     - name: Build3
       run: ls
