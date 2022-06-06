@@ -84,7 +84,3 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build
       run: make obs
-    - name: Build2
-      run: Start-Process CMD -Argumentlist '/k regsvr32 ./bin/32bit/obs-virtualsource.dll'
-    - name: Build3
-      run: ls
