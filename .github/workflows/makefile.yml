@@ -83,6 +83,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build
-    - run: make obs
+    run: make obs
     - name: Build2
-    - run: regsvr32 ./bin/32bit/obs-virtualsource.dll
+    run: regsvr32 ./bin/32bit/obs-virtualsource.dll
