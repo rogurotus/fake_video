@@ -82,6 +82,7 @@ jobs:
         shell: powershell
     steps:
     - uses: actions/checkout@v2
+
     - name: Build
     run: make obs
 
@@ -93,5 +94,3 @@ jobs:
 
     - name: Build4
     run: Start-Process CMD -Argumentlist '/k regsvr32 ./bin/32bit/obs-virtualsource.dll'
-
-      	
