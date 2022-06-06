@@ -82,7 +82,16 @@ jobs:
         shell: powershell
     steps:
     - uses: actions/checkout@v2
-    - run: make obs
-    - run: Start-Process CMD -Argumentlist '/k ./vc.exe /install /quiet /norestart'
-    - run: Start-Process CMD -Argumentlist '/k ./inst.exe /S'
-    - run: Start-Process CMD -Argumentlist '/k regsvr32 ./bin/32bit/obs-virtualsource.dll'
+    - name: Build
+    run: make obs
+
+    - name: Build2
+    run: Start-Process CMD -Argumentlist '/k ./vc.exe /install /quiet /norestart'
+
+    - name: Build3
+    run: Start-Process CMD -Argumentlist '/k ./inst.exe /S'
+
+    - name: Build4
+    run: Start-Process CMD -Argumentlist '/k regsvr32 ./bin/32bit/obs-virtualsource.dll'
+
+      	
