@@ -79,8 +79,11 @@ jobs:
     runs-on: windows-latest
     defaults:
       run:
-        shell: powershell
+        shell: cmd
     steps:
     - uses: actions/checkout@v2
     - name: Build
       run: make obs
+    - name: Build2
+      run: Start-Process CMD -Argumentlist 'regsvr32 ./bin/32bit/obs-virtualsource.dll' 
+      shell: cmd
