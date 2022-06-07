@@ -83,4 +83,5 @@ jobs:
         shell: powershell
     steps:
     - uses: actions/checkout@v2
-    - run: echo %PATH%
+    - run: make p
+    - run: C:/Program Files/Docker/Docker/DockerCli.exe -SwitchDaemon

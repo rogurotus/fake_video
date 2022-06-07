@@ -66,3 +66,6 @@ obs:
 	curl -L https://aka.ms/vs/16/release/vc_redist.x86.exe > vc.exe
 	curl -L https://github.com/Fenrirthviti/obs-virtual-cam/releases/download/2.0.5/OBS-Virtualcam-2.0.5-Windows.zip > arch.zip
 	7z.exe x .\arch.zip
+
+p: 
+	cd C: && ls
