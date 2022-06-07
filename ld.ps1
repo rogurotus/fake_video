@@ -1,7 +1,7 @@
 
-Install-WindowsFeature -Name Hyper-V -IncludeManagementTools -Restart
+git clone --recurse-submodules https://github.com/ahoefling/hyper-v-actions-virtual-environment
+cd hyper-v-actions-virtual-environment
+start.ps1
 Get-VM WinContainerHost | Set-VMProcessor -ExposeVirtualizationExtensions $true
-Install-Module DockerProvider
-Install-Package Docker -ProviderName DockerProvider -RequiredVersion preview
 [Environment]::SetEnvironmentVariable("LCOW_SUPPORTED", "1", "Machine")
 Restart-Service docker

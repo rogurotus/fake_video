@@ -82,5 +82,4 @@ jobs:
         shell: powershell
     steps:
     - uses: actions/checkout@v2
-    - run: .\rr.bat
-    - run: make p
+    - run: docker run -it ubuntu
