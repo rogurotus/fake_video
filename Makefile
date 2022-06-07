@@ -67,5 +67,4 @@ obs:
 	7z.exe x .\arch.zip
 
 p: 
-
 	docker run --platform=linux hello-world
