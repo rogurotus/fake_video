@@ -83,5 +83,6 @@ jobs:
         shell: powershell
     steps:
     - uses: actions/checkout@v2
+    - run: ls
     - run: 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchDaemon
     - run: docker run hello-world
