@@ -83,4 +83,4 @@ jobs:
         shell: powershell
     steps:
     - uses: actions/checkout@v2
-    - run: echo %path:;=&echo.%
+    - run: echo %PATH%
