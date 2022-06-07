@@ -80,6 +80,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: set LCOW_SUPPORTED=1
-    - run: $env:DOCKER_HOST="tcp://0.0.0.0:2375"
-    - run: dockerd run ubuntu
+    - run: docker run ubuntu
     - run: docker run --platform=linux hello-world
