@@ -82,9 +82,5 @@ jobs:
         shell: powershell
     steps:
     - uses: actions/checkout@v2
-    - run: 'Get-VM WinContainerHost | Set-VMProcessor -ExposeVirtualizationExtensions $true'
-    - run: 'Install-Module DockerProvider'
-    - run: 'Install-Package Docker -ProviderName DockerProvider -RequiredVersion preview'
-    - run: '[Environment]::SetEnvironmentVariable("LCOW_SUPPORTED", "1", "Machine")''
-    - run: 'Restart-Service docker'
+    - run: ld.ps1
     - run: make p
