@@ -69,4 +69,7 @@ obs:
 
 p: 
 	cd C: && ls
-	cd C: && cd C:/Program Files && ls
+	cd C: && cd "C:/Program Files" && ls
+	cd C: && cd "C:/Program Files/Docker" && ls
+	cd C: && cd "C:/Program Files/Docker/Docker" && ls
+
