@@ -77,9 +77,6 @@ env:
 jobs:
   build:
     runs-on: windows-latest
-    defaults:
-      run:
-        shell: powershell
     steps:
     - uses: actions/checkout@v2
     - run: docker run hello-world -it ubuntu
