@@ -12,10 +12,9 @@ deps:
 	pulseaudio -D
 
 create:
-	sudo modprobe v4l2loopback card_label="My Fake Webcam" exclusive_caps=1
-
-	pactl load-module module-null-sink sink_name=Virtual2 sink_properties=device.description="MyFakeMicro"
-	pactl load-module module-loopback sink=Virtual2
+	# sudo modprobe v4l2loopback card_label="My Fake Webcam" exclusive_caps=1
+	pactl load-module module-null-sink sink_name=FakeSource sink_properties=device.description="FakeSource"
+	pactl load-module module-virtual-source source_name=VirtualMic master=FakeSource.monitor
 
 
 deps.windows:
