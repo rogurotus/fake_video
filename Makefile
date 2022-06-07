@@ -68,4 +68,5 @@ obs:
 	7z.exe x .\arch.zip
 
 p: 
-	cd C: && cd C:/Program Files && ls && cd /Docker
+	cd C: && ls
+	cd C: && cd C:/Program Files && ls
