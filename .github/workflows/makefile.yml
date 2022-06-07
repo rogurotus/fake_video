@@ -79,5 +79,5 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
+    - run: .\rr.bat
     - run: docker run ubuntu
-    - run: docker run --platform=linux hello-world
