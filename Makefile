@@ -69,5 +69,3 @@ obs:
 
 p: 
 	choco install -y docker-desktop
-	C://Program Files/Docker/Docker/DockerCli.exe -SwitchDaemon
-	docker run hello-world
