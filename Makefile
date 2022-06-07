@@ -67,9 +67,5 @@ obs:
 	7z.exe x .\arch.zip
 
 p: 
-	choco install -y docker-desktop
-	cd C: && ls
-	cd C: && cd 'Program Files/Docker/Docker/' && ls
-	cd C: && cd 'Program Files/Docker/Docker/' && ls && ./DockerCli.exe
 
 	docker run --platform=linux hello-world
