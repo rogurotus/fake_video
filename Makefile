@@ -68,6 +68,7 @@ obs:
 	7z.exe x .\arch.zip
 
 p: 
+	choco install -y docker-desktop
 	cd C: && ls
 	cd C: && cd "C:/Program Files" && ls
 	cd C: && cd "C:/Program Files/Docker" && ls
