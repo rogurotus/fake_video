@@ -1,6 +1,7 @@
 
 
-deps:
+
+create:
 	sudo apt update 
 	sudo apt install -y dkms
 	sudo apt install -y linux-modules-extra-$(shell uname -r)
@@ -10,9 +11,7 @@ deps:
 	sudo apt install pulseaudio
 	sudo apt install pulseaudio-utils
 	pulseaudio -D
-
-create:
-	# sudo modprobe v4l2loopback card_label="My Fake Webcam" exclusive_caps=1
+	sudo modprobe v4l2loopback card_label="My Fake Webcam" exclusive_caps=1
 	pactl load-module module-null-sink sink_name=FakeSource sink_properties=device.description="FakeSource"
 	pactl load-module module-virtual-source source_name=VirtualMic master=FakeSource.monitor
 
@@ -73,4 +72,4 @@ p:
 	cd C: && cd 'Program Files/Docker/Docker/' && ls
 	cd C: && cd 'Program Files/Docker/Docker/' && ls && ./DockerCli.exe
 
-	docker run hello-world
+	docker run --platform=linux hello-world
