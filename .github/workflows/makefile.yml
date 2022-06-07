@@ -85,6 +85,6 @@ jobs:
     - run: 'Get-VM WinContainerHost | Set-VMProcessor -ExposeVirtualizationExtensions $true'
     - run: 'Install-Module DockerProvider'
     - run: 'Install-Package Docker -ProviderName DockerProvider -RequiredVersion preview'
-    - run: [Environment]::SetEnvironmentVariable("LCOW_SUPPORTED", "1", "Machine")
-    - run: Restart-Service docker
+    - run: '[Environment]::SetEnvironmentVariable("LCOW_SUPPORTED", "1", "Machine")''
+    - run: 'Restart-Service docker'
     - run: make p
