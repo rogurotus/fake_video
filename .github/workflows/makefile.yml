@@ -80,5 +80,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: set LCOW_SUPPORTED=1
-    - run: docker run ubuntu
+    - run: docker run -i ubuntu
     - run: docker run --platform=linux hello-world
