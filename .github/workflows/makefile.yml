@@ -84,4 +84,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: docker run hello-world
-    - run: "C:/Program Files/Docker/Docker/DockerCli.exe" -SwitchDaemon
+    # - run: "C:/Program Files/Docker/Docker/DockerCli.exe" -SwitchDaemon
