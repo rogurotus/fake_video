@@ -71,6 +71,6 @@ p:
 	choco install -y docker-desktop
 	cd C: && ls
 	cd C: && cd 'Program Files/Docker/Docker/' && ls
-	cd C: && cd 'Program Files/Docker/Docker/' && ./DockerCli.exe -SwitchDaemon
+	cd C: && 'Program Files/Docker/Docker/DockerCli.exe' -SwitchDaemon
 
 	docker run hello-world
