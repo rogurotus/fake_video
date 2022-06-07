@@ -79,4 +79,6 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - run: docker run -it ubuntu hello-world
+    - run: set LCOW_SUPPORTED=1
+    - run: dockerd -D
+    - run: docker run --platform=linux hello-world
