@@ -82,5 +82,5 @@ jobs:
         shell: powershell
     steps:
     - uses: actions/checkout@v2
-    - run: ./ld.ps1
+    - run: .\rr.bat
     - run: make p
