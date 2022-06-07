@@ -79,4 +79,4 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - run: docker run hello-world -i ubuntu
+    - run: winpty docker run -it ubuntu
