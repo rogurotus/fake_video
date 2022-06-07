@@ -80,5 +80,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: set LCOW_SUPPORTED=1
-    - run: dockerd -D
+    - run: sudo dockerd -D
     - run: docker run --platform=linux hello-world
