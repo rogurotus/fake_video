@@ -73,11 +73,11 @@ env:
   CMAKE_GENERATOR: Visual Studio 16 2019
   PYTHON_VERSION: Python39
   NJOBS: 4
+  LCOW_SUPPORTED: 1
 
 jobs:
   build:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - run: docker context use linux
     - run: docker run ubuntu
