@@ -80,4 +80,5 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - run: docker run ubuntu
+    - run: docker build -t try .
+    - run: docker run try
