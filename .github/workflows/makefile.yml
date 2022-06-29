@@ -28,7 +28,7 @@ on:
 #     continue-on-error: true
 
 #     steps:
-#     - uses: actions/checkout@v2
+#     - uses: actions/checkout@v3
 #     - uses: msys2/setup-msys2@v2
 #       with:
 #         update: true
@@ -64,7 +64,7 @@ on:
 #       run:
 #         shell: cmd
 #     steps:
-#     - uses: actions/checkout@v2
+#     - uses: actions/checkout@v3
 #     - name: Install dependencies
 #       run: make deps.b
 
@@ -73,6 +73,6 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: Vampire/setup-wsl@v1
     - run: apt get update
