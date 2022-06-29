@@ -80,5 +80,5 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - run: docker build -t try .
-    - run: docker run try
+    - uses: Vampire/setup-wsl@v1
+    - run: apt get update
