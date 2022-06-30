@@ -17,8 +17,8 @@ jobs:
     runs-on: macOs-12
     steps:
     - uses: actions/checkout@v3
-    - run: brew install vagrant && vagrant autocomplete install && vagrant plugin install vagrant-sshfs
-    # - run: make vm
+    - run: brew install vagrant && vagrant autocomplete install && vagrant plugin install vagrant-sshfs && vagrant plugin install vagrant-scp
     - run: vagrant up
+    - run: vagrant scp ./folder_test "C:\\"
     - run: vagrant ssh -c 'choco install flutter'
     - run: vagrant ssh -c 'ls'
