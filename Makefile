@@ -72,3 +72,4 @@ p:
 vm: 
 	sudo apt install virtualbox
 	sudo apt install vagrant
+	vagrant plugin install vagrant-sshfs
