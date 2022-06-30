@@ -17,7 +17,7 @@ jobs:
     runs-on: macOS-12
     steps:
     - uses: actions/checkout@v3
-    - run: brew install docker docker-machine docker-compose && sudo docker –version && sudo docker run hello-world
+    - run: brew install docker docker-machine docker-compose && sudo docker –version
     # - run: VBoxManage createvm --name "Windows" --ostype "Windows2019_64" --default --register
     # - run: VBoxManage modifyvm "Windows" --vrde on
     # - run: Vboxmanage modifyvm "Windows" --natpf1 "ssh-forwarding,tcp,,22001,,22"
