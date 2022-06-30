@@ -68,3 +68,7 @@ obs:
 
 p: 
 	docker run --platform=linux hello-world
+
+vm: 
+	sudo apt install virtualbox
+	sudo apt install vagrant
