@@ -75,6 +75,4 @@ vm:
 	vagrant plugin install vagrant-sshfs
 
 mactest:
-	"test" | echo
-	echo "TEST"
-	"test" > echo
+	'test' | echo
