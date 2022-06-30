@@ -19,4 +19,6 @@ jobs:
     - uses: actions/checkout@v3
     - run: VBoxManage createvm --name "Windows" --ostype "Windows2019_64" --default --register
     - run: VBoxManage modifyvm "Windows" --vrde on
+    - run: Vboxmanage modifyvm "Windows" --natpf1 "ssh-forwarding,tcp,,22001,,22"
     - run: VBoxManage startvm "Windows" --type headless
+    - run: ssh -p 22001 eax@localhost
