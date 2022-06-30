@@ -22,7 +22,6 @@ jobs:
     - run: vagrant scp ./folder_test /test
     - name: Perform a Pester test from the command-line
       shell: vagrant ssh
-      run: ls 
       run: choco install flutter
     # - run: vagrant ssh -c ls
     # # - run: vagrant ssh -command choco install flutter
