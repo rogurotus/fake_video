@@ -22,8 +22,11 @@ jobs:
       brew install docker docker-machine docker-compose
       sudo docker –version
       sudo docker run hello-world
-    - run: VBoxManage createvm --name "Windows" --ostype "Windows2019_64" --default --register
-    - run: VBoxManage modifyvm "Windows" --vrde on
-    - run: Vboxmanage modifyvm "Windows" --natpf1 "ssh-forwarding,tcp,,22001,,22"
-    - run: VBoxManage startvm "Windows" --type headless
-    - run: ssh -p 22001 -tt eax@localhost
+    # - run: VBoxManage createvm --name "Windows" --ostype "Windows2019_64" --default --register
+    # - run: VBoxManage modifyvm "Windows" --vrde on
+    # - run: Vboxmanage modifyvm "Windows" --natpf1 "ssh-forwarding,tcp,,22001,,22"
+    # - run: VBoxManage startvm "Windows" --type headless
+    # - run: ssh -p 22001 -tt eax@localhost
+    - run: vagrant up
+    - run: vagrant ssh
+    - run: echo 'GG'
