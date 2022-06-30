@@ -12,13 +12,38 @@ env:
   NJOBS: 4
   LCOW_SUPPORTED: 1
 
+
 jobs:
-  build:
-    runs-on: macOs-12
+  vagrant-up:
+    runs-on: macos-10.15
+
     steps:
-    - uses: actions/checkout@v3
-    - run: chmod +x ./vagrant-ssh 
-    - run: brew install vagrant && vagrant autocomplete install && vagrant plugin install vagrant-sshfs && vagrant plugin install vagrant-scp
-    - run: vagrant up
-    - run: vagrant scp ./folder_test /test
-    - run: ./vagrant-ssh
+      - uses: actions/checkout@v2
+
+      - name: Cache Vagrant boxes
+        uses: actions/cache@v2
+        with:
+          path: ~/.vagrant.d/boxes
+          key: ${{ runner.os }}-vagrant-${{ hashFiles('Vagrantfile') }}
+          restore-keys: |
+            ${{ runner.os }}-vagrant-
+
+      - name: Show Vagrant version
+        run: vagrant --version
+
+      - name: Run vagrant up
+        run: vagrant up
+
+      - name: ssh into box after boot
+        run: vagrant ssh -c "echo 'hello world!'"
+        
+# jobs:
+#   build:
+#     runs-on: macOs-12
+#     steps:
+#     - uses: actions/checkout@v3
+#     - run: chmod +x ./vagrant-ssh 
+#     - run: brew install vagrant && vagrant autocomplete install && vagrant plugin install vagrant-sshfs && vagrant plugin install vagrant-scp
+#     - run: vagrant up
+#     - run: vagrant scp ./folder_test /test
+#     - run: ./vagrant-ssh
