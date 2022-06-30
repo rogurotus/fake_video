@@ -17,4 +17,5 @@ jobs:
     runs-on: macOS-12
     steps:
     - uses: actions/checkout@v3
-    - run: VBoxManage list ostypes
+    - run: VBoxManage createvm --name "Windows" --ostype "Windows10" --default --register
+    - run: VBoxManage modifyvm "Windows" --vrde 
