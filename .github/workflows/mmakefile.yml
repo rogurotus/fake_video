@@ -26,4 +26,4 @@ jobs:
     # - run: ssh -p 22001 -tt eax@localhost
     - run: vagrant up
     - run: vagrant ssh
-    - run: echo 'GG'
+    - run: ver
