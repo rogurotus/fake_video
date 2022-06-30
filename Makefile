@@ -76,3 +76,5 @@ vm:
 
 mactest:
 	"test" | echo
+	echo "TEST"
+	"test" > echo
