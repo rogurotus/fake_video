@@ -42,7 +42,11 @@ jobs:
     runs-on: macOs-12
     steps:
     - uses: actions/checkout@v3
-    - run: brew install vagrant && vagrant autocomplete install && vagrant plugin install vagrant-sshfs && vagrant plugin install vagrant-scp && vagrant plugin install vagrant-vbguest
+    - run: eval "echo 'test'"
+    - run: eval 'echo "test"'
+    - run: brew install vagrant && vagrant autocomplete install && vagrant plugin install vagrant-scp
     - run: vagrant up
     # - run: vagrant scp ./folder_test /test
-    - run: vagrant ssh -c "| ls"
+    - run: eval  'vagrant ssh -c "ls"'
+    - run: vagrant ssh
+    - run: vagrant ssh -c "ls"
