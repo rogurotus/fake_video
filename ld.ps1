@@ -1,3 +1,1 @@
-
-[Environment]::SetEnvironmentVariable("LCOW_SUPPORTED", "1", "Machine")
-Restart-Service docker
+git clone https://github.com/flutter/flutter.git -b stable
