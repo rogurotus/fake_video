@@ -42,8 +42,7 @@ jobs:
     runs-on: macOs-12
     steps:
     - uses: actions/checkout@v3
-    - run: chmod +x ./vagrant-ssh 
     - run: brew install vagrant && vagrant autocomplete install && vagrant plugin install vagrant-sshfs && vagrant plugin install vagrant-scp
     - run: vagrant up
-    - run: vagrant scp ./folder_test /test
-    - run: vagrant ssh -c "powershell ls"
+    # - run: vagrant scp ./folder_test /test
+    - run: vagrant ssh -c "ls"
