@@ -38,27 +38,9 @@ env:
 #         run: vagrant ssh -c "echo 'hello world!'"
 
 jobs:
-  vagrant-up:
-    runs-on: macos-10.15
-
+  build:
+    runs-on: macOs-12
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Cache Vagrant boxes
-      uses: actions/cache@v2
-      with:
-        path: ~/.vagrant.d/boxes
-        key: ${{ runner.os }}-vagrant-${{ hashFiles('Vagrantfile') }}
-        restore-keys: |
-          ${{ runner.os }}-vagrant-
-
-    - name: Run vagrant up
-      run: vagrant up
-
-# jobs:
-#   build:
-#     runs-on: macOs-12
-#     steps:
-#     - uses: actions/checkout@v3
-#     - run: brew install vagrant && vagrant autocomplete install && vagrant plugin install vagrant-sshfs && vagrant plugin install vagrant-scp
-#     - run: vagrant up
+    - uses: actions/checkout@v3
+    - run: brew install vagrant && vagrant autocomplete install && vagrant plugin install vagrant-sshfs && vagrant plugin install vagrant-scp
+    - run: vagrant up

@@ -1,0 +1,10 @@
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
+
+RUN Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+RUN Get-VM WinContainerHost | Set-VMProcessor -ExposeVirtualizationExtensions $true 
+RUN Install-Module DockerProvider Install-Package Docker -ProviderName DockerProvider -RequiredVersion preview 
+RUN [Environment]::SetEnvironmentVariable("LCOW_SUPPORTED", "1", "Machine") 
+RUN Restart-Service docker 
+RUN docker run ubuntu -it
+
+CMD [ "powershell" ]
