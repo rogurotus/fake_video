@@ -1,4 +1,5 @@
 
+Get-ChildItem;
 Set-Location ./vagrant;
 Expand-Archive ./Debug.zip -DestinationPath ./;
 Set-Location ./Debug;
