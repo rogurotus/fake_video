@@ -42,6 +42,8 @@ jobs:
     runs-on: macOs-12
     steps:
     - uses: actions/checkout@v3
+    - uses: docker-practice/actions-setup-docker@master
+    - run: docker run redis
     - run: brew install vagrant && vagrant autocomplete install && vagrant plugin install vagrant-sshfs && vagrant plugin install vagrant-scp
     - run: vagrant scp Debug.zip :Debug.zip
     - run: vagrant up
