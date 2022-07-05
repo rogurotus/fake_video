@@ -43,4 +43,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: brew install vagrant && vagrant autocomplete install && vagrant plugin install vagrant-sshfs && vagrant plugin install vagrant-scp
+    - run: vagrant scp Debug.zip :Debug.zip
     - run: vagrant up
