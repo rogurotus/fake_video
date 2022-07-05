@@ -1,4 +1,5 @@
 
+Set-Location ./vagrant;
 Expand-Archive ./Debug.zip -DestinationPath ./;
 Set-Location ./Debug;
 $env:WEBRTC_FAKE_MEDIA = 'true';
