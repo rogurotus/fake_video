@@ -1,11 +1,8 @@
 
 Set-Location ./vagrant;
-Get-ChildItem;
-Expand-Archive ./Debug.zip -DestinationPath ./;
-Set-Location ./Debug;
-Get-ChildItem;
+Expand-Archive ./Release.zip -DestinationPath ./;
+Set-Location ./Release;
 $env:WEBRTC_FAKE_MEDIA = 'true';
-Get-ChildItem;
 .\medea_jason_example.exe -wait | ForEach-Object { Write-Output $_; 
     if ($_ -match "All tests passed!") {
         exit 0
@@ -13,7 +10,3 @@ Get-ChildItem;
     elseif ($_ -match "Some tests failed.") {
         exit 1
     } } ;
-Get-ChildItem;
-
-
-    
