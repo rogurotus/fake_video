@@ -39,9 +39,19 @@ env:
 
 jobs:
   build:
-    runs-on: macOs-12
+    runs-on: windwos-latest
     steps:
     - uses: actions/checkout@v3
-    # - uses: docker-practice/actions-setup-docker@master
-    - run: brew install vagrant && vagrant autocomplete install && vagrant plugin install vagrant-sshfs && vagrant plugin install vagrant-scp
-    - run: vagrant up
+    - uses: actions/upload-artifact@v3
+      with:
+        name: windows-test-bundle-${{ github.run_number }}
+        path: ./TEST/TEST_IN_TEST/
+    - name: Display structure of upload files
+      run: ls -R
+      
+    - uses: actions/download-artifact@v3
+      with:
+        name: my-artifact
+        
+    - name: Display structure of downloaded files
+      run: ls -R
