@@ -68,3 +68,16 @@ obs:
 
 p: 
 	docker run --platform=linux hello-world
+
+vm: 
+	sudo apt install virtualbox
+	sudo apt install vagrant
+	vagrant plugin install vagrant-sshfs
+
+mactest:
+	ls -la 
+	echo "_____________"
+	ls -la | more
+	echo "_____________"
+	echo "124" | echo
+	
