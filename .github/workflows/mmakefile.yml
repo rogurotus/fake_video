@@ -39,19 +39,7 @@ env:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/upload-artifact@v3
-      with:
-        name: windows-test-bundle-${{ github.run_number }}
-        path: ./TEST/TEST_IN_TEST/
-    - name: Display structure of upload files
-      run: ls -R
-
-    - uses: actions/download-artifact@v3
-      with:
-        name: windows-test-bundle-${{ github.run_number }}
-        
-    - name: Display structure of downloaded files
-      run: ls -R
+    - run: echo 42
