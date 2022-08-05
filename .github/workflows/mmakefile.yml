@@ -6,13 +6,40 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  CMAKE_GENERATOR: Visual Studio 16 2019
+  PYTHON_VERSION: Python39
+  NJOBS: 4
+  LCOW_SUPPORTED: 1
+
+
+# jobs:
+#   vagrant-up:
+#     runs-on: macos-10.15
+
+#     steps:
+#       - uses: actions/checkout@v2
+
+#       - name: Cache Vagrant boxes
+#         uses: actions/cache@v2
+#         with:
+#           path: ~/.vagrant.d/boxes
+#           key: ${{ runner.os }}-vagrant-${{ hashFiles('Vagrantfile') }}
+#           restore-keys: |
+#             ${{ runner.os }}-vagrant-
+
+#       - name: Show Vagrant version
+#         run: vagrant --version
+
+#       - name: Run vagrant up
+#         run: vagrant up
+
+#       - name: ssh into box after boot
+#         run: vagrant ssh -c "echo 'hello world!'"
+
 jobs:
   build:
-
-    runs-on: windows-latest
-
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v3
-    - uses: Vampire/setup-wsl@v1
-    - run: apt get update
-    
+    - run: echo 42
