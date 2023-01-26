@@ -13,6 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: Vampire/setup-wsl@v1
+    - uses: Vampire/setup-wsl@v2
     - run: apt get update
     
